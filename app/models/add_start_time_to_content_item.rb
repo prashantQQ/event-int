@@ -1,0 +1,2 @@
+class AddStartTimeToContentItem < ApplicationRecord
+end

@@ -1,0 +1,43 @@
+<%= form_with(model: content_item) do |form| %>
+  <% if content_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(content_item.errors.count, "error") %> prohibited this content_item from being saved:</h2>
+
+      <ul>
+        <% content_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label>Event Title</label>
+    <%= form.text_field :content_title %>
+  </div>
+
+  <div class="field">
+    <label>Network</label>
+    <%= form.select :publishing_target, ['facebook', 'YouTube']%>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :publish_date %>
+    <%= form.datetime_select :publish_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

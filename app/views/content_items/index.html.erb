@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Content Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content title</th>
+      <th>Publishing target</th>
+      <th>Publish date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @content_items.each do |content_item| %>
+      <tr>
+        <td><%= content_item.content_title %></td>
+        <td><%= content_item.publishing_target %></td>
+        <td><%= content_item.publish_date %></td>
+        <td><%= link_to 'Show', content_item %></td>
+        <td><%= link_to 'Edit', edit_content_item_path(content_item) %></td>
+        <td><%= link_to 'Destroy', content_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Content Item', new_content_item_path %>
