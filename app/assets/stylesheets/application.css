@@ -14,3 +14,21 @@
  *= require_tree .
  *= require_self
  */
+
+.form-panel{
+    border-block-color: red;
+    border-bottom: black;
+    border-style: double;
+}
+
+.search-panel{
+    border-block-color: red;
+    border-bottom: black;
+    border-style: double;
+}
+
+form{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}

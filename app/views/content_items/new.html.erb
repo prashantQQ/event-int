@@ -1,16 +1,17 @@
+<div class="form-panel">
 <h1>New Content Item</h1>
-
 <%= render 'form', content_item: @content_item %>
-
-<div>
+</div>
+<br/>
+<br/>
+<div class="search-panel">
 	<%= form_with(url: '/search_form', method: 'get', local: true) do %>
   		<%= text_field_tag(:search) %>
-  		<label>Network</label>
-  		<%= text_field_tag(:network) %>
+  		<%= select_tag 'network', options_for_select([['facebook', 'facebook'],['YouTube', 'YouTube']]) %>
   		<%= submit_tag("Go") %>
 	<% end %>
 </div>
-
+<br/>
 <div>
 	<%= month_calendar(events: @content_items) do |date, content_items| %>
   		<%= date %>
@@ -21,3 +22,4 @@
   		<% end %>
 	<% end %>
 </div>
+
